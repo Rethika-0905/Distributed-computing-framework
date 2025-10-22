@@ -1,7 +1,7 @@
 # Distributed-computing-framework
 This is a network design of how distributed computing is working in a network.
 
-🌐 Network-Based Distributed Computing Framework
+🌐 **Network-Based Distributed Computing Framework**
 📘 Overview
 
 This project implements a Network-Based Distributed Computing Framework using Python.
@@ -15,7 +15,7 @@ It simulates the distribution of computing tasks across multiple networks of wor
 
 Each worker node processes tasks, can randomly fail, recover after downtime, and automatically reassign tasks from a queue — providing a simplified model of real-world distributed systems.
 
-🚀 Features
+🚀 **Features**
 
 Multi-Network System:
 Tasks are distributed among several independent networks, each containing multiple worker nodes.
@@ -32,9 +32,9 @@ Simulates random node failures (with automatic recovery) and reassigns incomplet
 Task Queue Management:
 Unprocessed or failed tasks are added to a queue and picked up by recovered nodes.
 
-🧠 How It Works
+🧠 **How It Works**
 
-Master Node
+## Master Node
 
 Creates multiple networks, each containing several worker nodes.
 
@@ -42,7 +42,7 @@ Generates and distributes tasks to workers using round-robin scheduling.
 
 Monitors load and manages the global task queue.
 
-Worker Nodes
+## Worker Nodes
 
 Continuously run as threads simulating distributed computing.
 
@@ -52,12 +52,13 @@ Pick tasks from the queue upon recovery.
 
 Log task start, completion, failure, and recovery events.
 
-⚙️ Technologies Used
+⚙️ **Technologies Used**
 Component	Description
 Language	Python 3.x
 Modules	threading, queue, time, random, logging
 Concepts	Distributed Systems, Load Balancing, Fault Tolerance, Multithreading
-🧩 Code Structure
+
+🧩 **Code Structure**
 main09.py
 ├── WorkerNode (class)
 │   ├── run()                # Simulates node activity, failure, and recovery
@@ -70,20 +71,18 @@ main09.py
     ├── assign_task_to_network() # Assigns tasks to available workers
     └── start()              # Starts the framework
 
-🧪 How to Run
+🧪 **How to Run**
 
-Clone the Repository
+## Clone the Repository
 
-git clone https://github.com/yourusername/distributed-computing-framework.git
-cd distributed-computing-framework
+git clone https://github.com/Rethika0905/Distributed-computing-framework.git
+cd Distributed-computing-framework
 
-
-Run the Program
+## Run the Program
 
 python main09.py
 
-
-Observe Logs
+## Observe Logs
 
 Logs will appear in your console showing:
 
@@ -93,14 +92,18 @@ Node failures and recoveries.
 
 Tasks being picked up from the queue.
 
-📊 Example Log Output
+📊 **Example Log Output**
 2025-10-22 18:30:05 - INFO - Task-5 started by Network-1 Node-12
+
 2025-10-22 18:30:12 - ERROR - Network-0 Node-7 has failed.
+
 2025-10-22 18:30:18 - INFO - Network-0 Node-7 has recovered.
+
 2025-10-22 18:30:19 - INFO - Network-0 Node-7 picked up Task-22 from the queue.
+
 2025-10-22 18:30:27 - INFO - Task-22 completed by Network-0 Node-7
 
-🛠️ Configuration
+🛠️ **Configuration**
 
 You can easily customize the simulation in the MasterNode constructor:
 
@@ -110,7 +113,8 @@ Parameter	Description	Default
 networks	Number of independent networks	3
 nodes_per_network	Number of worker nodes per network	50
 tasks	Total number of tasks to simulate	1000
-📈 #Future Enhancements
+
+📈 **Future Enhancements**
 
 Implement real network communication using socket or gRPC.
 
